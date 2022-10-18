@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEGAN CRAVING</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+
+    
+<style>:root{
+    --yellow:#F7CA3E;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+h1, h3{
+    font-family: 'Oswald', sans-serif;
+}
+
+
+html{
+    font-size: 62.5%;
+    
+}
+
+section{
+    min-height: 100vh;
+    padding:1rem 10%;
+    padding-top: 8.5rem;
+}
+
+.btn{
+    font-size: 1.7rem;
+    padding:.7rem 4rem;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    background:none;
+    color:#333;
+    cursor: pointer;
+    border:.2rem solid var(--yellow);
+}
+
+.btn:hover{
+    background:var(--yellow);
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    padding:0 .5rem;
+    color:#333;
+}
+
+.heading span{
+    color:var(--yellow);
+}
+
+header{
+    position: fixed;
+    top:0; left:0;
+    z-index: 1000;
+    width:100%;
+    background:#fff;
+    padding:1.5rem 10%;
+    box-shadow: 0 .3rem 2rem rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo img{
+    height:5rem;
+}
+
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+header .navbar ul li{
+    margin-left: 3rem;
+}
+
+header .navbar ul li a{
+    font-size: 1.7rem;
+    color:#666;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color:var(--yellow);
+}
+
+header #menu-bar{
+    font-size: 3rem;
+    color:#666;
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.home::before,
+.home::after{
+    content:'';
+    position: absolute;
+    top:5rem; right:-6rem;
+    background:var(--yellow);
+    border-radius: 3rem;
+    transform:rotate(-45deg);
+    height:40rem;
+    width:70rem;
+    z-index: -2;
+    animation: animte 1s linear 1;
+}
+@keyframes animte{
+    0%{
+        transform:rotate(90deg) translateY(-40rem);
+    }
+}
+
+
+.home::before{
+    top:-7rem;
+    background:#fff;
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.1);
+    z-index: -1;
+}
+
+.home .image{
+    flex:1 1 39rem;
+}
+
+.home .image img{
+    width:100%;
+}
+
+.home .content{
+    flex:1 1 39rem;
+}
+
+.home .content h3{
+    color:#333;
+    font-size: 6rem;
+}
+
+.home .content p{
+    color:#666;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.about .image{
+    flex:1 1 40rem;
+    height:50rem;
+    background:url(https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/eazytrendz%2F2930%2Ftrend20200903104959.jpg),  no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+}
+
+.about .content{
+    flex:1 1 40rem;
+    padding:2rem;
+}
+
+.about .content h3{
+    font-size: 4rem;
+    color:#333;
+}
+
+.about .content p{
+    font-size: 1.6rem;
+    color:#666;
+    padding:1rem 0;
+}
+
+.menu .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding:1rem 0;
+    margin:2rem 0;
+    border-top: .3rem dashed rgba(0,0,0,.2);
+    border-bottom: .3rem dashed rgba(0,0,0,.2);
+}
+
+.menu .list .btn{
+    margin:1rem;
+}
+
+.menu .list .btn.active,
+.menu .list .btn:hover{
+    background:var(--yellow);
+    color:#fff;
+}
+
+.menu .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu .row .image{
+    margin:2rem;
+    padding:2rem;
+    flex:1 1 40rem;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+
+.menu .row .image img{
+    width:100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.menu .row .content{
+    flex:1 1 40rem;
+}
+
+.menu .row .content .info{
+    padding:1rem 0;
+}
+
+.menu .row .content .info h3{
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    color:#333;
+}
+
+.menu .row .content .info h3 span{
+    padding-right: 1rem;
+    color:var(--yellow);
+}
+
+.menu .row .content .info p{
+    padding:1rem 0;
+    padding-left: 4.5rem;
+    font-size: 1.5rem;
+    color:#666;
+}
+
+.popular{
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.popular .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.popular .box-container .box{
+    background:#fff;
+    width:35rem;
+    padding:2rem;
+    margin:2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.popular .box-container .box img{
+    height:20rem;
+    width:100%;
+    object-fit: cover;
+}
+
+.popular .box-container .box h3{
+    color:#333;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+
+
+.popular .box-container .box .price{
+    color:rgb(121, 104, 104);
+    font-size: 2.5rem;
+}
+
+
+.popular .box-container .box:hover{
+    transform: scale(1.02);
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.2);
+}
+
+.order{
+    background-size: cover;
+    background-position: center;
+
+}
+
+.order .row{
+    display: flex;
+    background:#fff;
+    margin:2rem 0;
+    overflow: hidden;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
+    border-radius: 1rem;
+}
+
+.order .row .image{
+    flex:1 1 40%;
+}
+
+.order .row .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.order .row form{
+    flex:1 1 60%;
+    background:#fff;
+    padding:2rem;
+}
+
+.order .row form .box{
+    padding:1rem;
+    margin:1rem 0;
+    font-size: 1.5rem;
+    color:#333;
+    text-transform: none;
+    background:#f0f0f0;
+    width:100%;
+}
+
+.order .row form .box::placeholder{
+    text-transform: capitalize;
+}
+
+.order .row form .address{
+    resize: none;
+    height:15rem;
+}
+
+.footer{
+    background:#282727;
+    padding:1rem 7%;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+    margin:2rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:#fff;
+    padding:1rem 0;
+    font-weight: normal;
+}
+
+.footer .box-container .box p{
+    font-size: 1.7rem;
+    color:#eee;
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    font-size: 1.7rem;
+    color:#eee;
+    padding:1rem 0;
+    display: block;
+}
+
+.footer .box-container .box a:hover{
+    color:var(--yellow);
+}
+
+.footer .box-container .box p i{
+    padding-right: .5rem;
+    color:var(--yellow);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    text-align: center;
+    border-top: .2rem solid rgba(255,255,255,.7);
+    padding:2rem 1rem;
+    font-weight: normal;
+    letter-spacing: .1rem;
+    color:#fff;
+}
+
+.footer .credit a{
+    color:var(--yellow);
+}
+
+
+</style>
+</head>
+<body>
+    
+<!-- header  -->
+
+<header>
+
+    <a href="#" class="logo"><img src="https://img.freepik.com/free-vector/red-burger-logo-icon_7315-21.jpg?size=626&ext=jpg" ></a>
+    <a href="#" class="logo" style="color: rgb(255, 187, 0);"><h2>VEGAN CRAVING</h2></a>
+
+    <div id="menu-bar" class="fas fa-hamburger"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#menu">menu</a></li>
+            <li><a href="#popular">popular</a></li>
+            <li><a href="#order">order</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            
+        </ul>
+        
+    </nav>
+
+</header>
+
+<!-- /header   -->
+
+<!-- home    -->
+
+<section class="home" id="home">
+
+    <div class="content" data-aos="fade-right">
+        <h3>Getting Bored!!
+        Try our new dishes</h3>
+        <p>Try the all new vegan dishes just on a click!
+            The food will be delivered at your door step.</p>
+        <a href="#"><button class="btn">get started</button></a>
+    </div>
+    <div class="image">
+
+    </div>
+    
+
+</section>
+
+<!-- /home  -->
+
+<!-- about   -->
+<section class="about" id="about">
+
+    <div class="image" data-aos="fade-right"></div>
+
+    <div class="content" data-aos="fade-left">
+        <h3>A word about us</h3>
+        <p>Vegan Craving started in 2004. At that time it was known as food craving. But in 2013 I suffored from food poisioning by eating chicken and from that time I decided eat and make people eat vegan food.  </p>
+        <p>The food is coocked in a proper hygenic place keeping in check the security guidelines of covid-19.</p>
+        <a href="#"><button class="btn">learn more</button></a>
+    </div>
+
+</section>
+
+<!-- /about -->
+
+<!-- menu -->
+<section class="menu" id="menu">
+
+<h1 class="heading"> our delicious <span>menu</span> </h1>
+
+<ul class="list" data-aos="fade-down">
+    <li class="btn" data-src="https://www.verywellhealth.com/thmb/gF-I-Kf6MyQfEbp1Q9mpXtcENxM=/2880x1920/filters:fill(87E3EF,1)/best-breakfast-choices-and-diabetes-1087468-primary-recirc-603a39fe3b10439eaa9a0cf80a09eec2.jpg">Breakfast</li>
+    <li class="btn active" data-src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/healthy-recipes-marquee-1577978180.png?crop=0.663xw:0.993xh;0.171xw,0&resize=640:*">Lunch</li>
+    <li class="btn" data-src="https://purewows3.imgix.net/images/articles/2019_04/one-pan-spaghetti-meatballs-recipe-290.jpg?auto=format,compress&cs=strip">Dinner</li>
+    <li class="btn" data-src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dessert-main-image-molten-cake-0fbd4f2.jpg?quality=90&resize=500%2C454">Dessert</li>
+</ul>
+
+<div class="row" data-aos="fade-right">
+
+    <div class="image" data-aos="fade-left">
+        <img  id="menu-img" alt="">
+    </div>
+    <img src="" id="menu-img" alt="">
+    <div class="content">
+        <div class="info">
+            <h3> <span>01.</span> We serve best food in the country </h3>
+            <p>Our food is most delicious</p>
+        </div>
+        <div class="info">
+            <h3> <span>02.</span> We serve healthy food in the country </h3>
+            <p>Raw vegies are directly transported from farms</p>
+        </div>
+        <div class="info">
+            <h3> <span>03.</span> We serve hygenic food in the country </h3>
+            <p>We care about the hygene in our kitchen</p>
+        </div>
+        <div class="info">
+            <h3> <span>04.</span> We serve hot and spicy food in the country </h3>
+            <p>Spices and masaalas are fresh </p>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- popular  start  -->
+
+<section class="popular" id="popular">
+
+<h1 class="heading"> most <span>popular</span> foods </h1>
+
+<div class="box-container">
+
+    <div class="box" data-aos="fade-right">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7YtoVNDxtMNKQ8yx5AtUs7HrRnW_lcU7IMe0XW535A2mmi-zzBDD6OYJ_pUmPBJoto6w&usqp=CAU" >
+        <h3>Italian Pizza</h3>
+        
+        <div class="price">$35.00</div>
+        <a href="#"><button class="btn">add to cart</button></a>
+    </div>
+
+    <div class="box" data-aos="fade-left">
+        <img src="https://static.toiimg.com/thumb/52447240.cms?imgsize=109970&width=800&height=800" >
+        <h3>Gulab jamun</h3>
+        
+        <div class="price">$45.00</div>
+        <a href="#"><button class="btn">add to cart</button></a>
+    </div>
+
+    <div class="box" data-aos="fade-right">
+        <img src="https://30txqa38zb7h2db3bbcpzb1x-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/haitian-stewed-chicken.jpg" >
+        <h3>Briyani</h3>
+        
+        <div class="price">$55.00</div>
+        <a href="#"><button class="btn">add to cart</button></a>
+    </div>
+
+    <div class="box" data-aos="fade-left">
+        <img src="https://5.imimg.com/data5/IX/IB/ZF/SELLER-91282562/rasmalai-500x500.jpg" >
+        <h3>Rasmalai</h3>
+        
+        <div class="price">$25.00</div>
+        <a href="#"><button class="btn">add to cart</button></a>
+    </div>
+
+</div>
+
+</section>
+
+<!-- popular  end -->
+
+
+<!-- order  start  -->
+
+<section class="order" id="order">
+
+<h1 class="heading"> make an <span>order</span> </h1>
+
+<div class="row">
+
+    <form action="" data-aos="fade-right">
+        <input type="text" placeholder="your name" class="box">
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <input type="number" placeholder="your number" class="box">
+        <textarea name="" id="" cols="30" rows="10" class="box address" placeholder="your address"></textarea>
+        <input type="submit" value="order now" class="btn">
+    </form>
+
+    <div class="image" data-aos="fade-left">
+        <img src="https://www.usnews.com/dims4/USNEWS/81c66e9/2147483647/crop/2000x1313%2B0%2B0/resize/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F5b%2Fe2%2F2b19645b44b883a2c27560a91109%2F190815-preparingfood-stock.jpg" >
+    </div>
+
+</div>
+
+</section>
+
+<!-- order  end -->
+
+<!-- footer  start  -->
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-map-marker-alt"></i> Chandigarh </p>
+            <p> <i class="fas fa-envelope"></i> abc@hamil.com </p>
+            <p> <i class="fas fa-phone"></i> +91-0123456789 </p>
+            
+        </div>
+
+        
+
+        
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.instagram.com/">instagram</a>
+            <a href="https://www.facebook.com">facebook</a>
+            <a href="https://www.twitter.com">twitter</a>
+            <a href="https://www.discord.com">Discord</a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- footer  end -->
+<!-- script start -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script src="js/script.js"></script>
+
+<script>
+
+    AOS.init({
+        delay:400,
+        duration:1000
+    })
+
+</script>
+<script>
+    $(document).ready(function(){
+
+$('#menu-bar').click(function(){
+    $(this).toggleClass('fa-times');
+    $('.navbar').toggleClass('nav-toggle');
+});
+
+$(window).on('load scroll',function(){
+
+    $('#menu-bar').removeClass('fa-times');
+    $('.navbar').removeClass('nav-toggle');
+
+    $('section').each(function(){
+
+        let top = $(window).scrollTop();
+        let height = $(this).height();
+        let id = $(this).attr('id');
+        let offset = $(this).offset().top - 200;
+
+        if(top > offset && top < offset + height){
+            $('.navbar ul li a').removeClass('active');
+            $('.navbar').find(`[href="#${id}"]`).addClass('active');
+        }
+
+    });
+
+});
+
+$('.list .btn').click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    let src = $(this).attr('data-src');
+    $('.menu .row .image img').attr('src',src);
+});
+
+});
+
+
+    var options = {
+            bottom: '20px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '50px', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: false, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+    }
+
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+
+
+</script>
+</body>
+</html>
+<!-- Made By -->
+<!-- 2010991015/jaskirat singh/G-22 -->
+<!-- 2010990321/ishu tiwari/G-16 -->
